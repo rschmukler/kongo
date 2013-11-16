@@ -1,0 +1,24 @@
+{
+  "name": "kongo",
+  "version": "0.1.0",
+  "description": "Coroutine based mongo driver for Node.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/rschmukler/kongo"
+  },
+  "keywords": [
+    "mongo",
+    "generators",
+    "ecma6",
+    "coroutines"
+  ],
+  "author": "Ryan Schmukler <ryan@slingingcode.com> (http://slingingcode.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rschmukler/kongo/issues"
+  }
+}
