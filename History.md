@@ -1,14 +1,11 @@
 
-n.n.n / 2013-11-17 
+0.0.2 / 2013-11-17 
 ==================
 
- * Added README.md
- * Initial Query Wrapper Support
- * Initial commit
+ * Added test for findAndModify
+ * Fixed bug for findAndModify
 
-n.n.n / 2013-11-17 
+0.0.1 / 2013-11-17 
 ==================
 
- * Added README.md
- * Initial Query Wrapper Support
- * Initial commit
+ * First Release

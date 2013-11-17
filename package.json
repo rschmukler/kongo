@@ -1,6 +1,6 @@
 {
   "name": "kongo",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Coroutine based mongo driver for Node.js",
   "main": "index.js",
   "scripts": {
