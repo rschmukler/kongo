@@ -2,6 +2,7 @@
 [![Build Status](https://api.travis-ci.org/rschmukler/kongo.png)](http://travis-ci.org/rschmukler/kongo) 
 [![Coverage
 Status](https://coveralls.io/repos/rschmukler/kongo/badge.png)](https://coveralls.io/r/rschmukler/kongo)
+
 Implementation of [mongodb](https://github.com/mongodb/node-mongodb-native) that
 works well with [co](https://github.com/visionmedia/co).
 
