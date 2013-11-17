@@ -114,6 +114,16 @@ describe('Kongo', function() {
           })(done);
         });
       });
+
+      describe('findAndModify', function() {
+        it('yields the updated document if it finds it', function(done) {
+          co(function *() {
+            var newDoc = yield collection.save({name: 'FindAndModifyMe'});
+            newDoc = yield collection.findAndModify({_id: newDoc._id}, {}, {name: 'FindAndModified'});
+            expect(newDoc).to.have.property('name', 'FindAndModified');
+          })(done);
+        });
+      });
     });
 
     describe('Queries', function() {
