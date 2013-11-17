@@ -4,7 +4,11 @@
   "description": "Coroutine based mongo driver for Node.js",
   "main": "index.js",
   "scripts": {
-    "test": "mocha -w"
+    "test": "mocha -w",
+    "blanket": {
+      "pattern": "lib",
+      "data-cover-never": "node_modules"
+    }
   },
   "repository": {
     "type": "git",

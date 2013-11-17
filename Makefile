@@ -1,10 +1,18 @@
+MOCHA_PATH = ./node_modules/mocha/bin/mocha
+
 test:
-	./node_modules/mocha/bin/mocha --reporter=spec --harmony -w
+	NODE_ENV=test $(MOCHA_PATH) --reporter=spec --harmony -w
 
 test-once:
-	./node_modules/mocha/bin/mocha --reporter=spec --harmony
+	NODE_ENV=test $(MOCHA_PATH) --reporter=spec --harmony
 
 test-debug:
-	./node_modules/mocha/bin/mocha --reporter=spec --harmony debug
+	NODE_ENV=test $(MOCHA_PATH) --reporter=spec --harmony debug
 
-.PHONY: test test-once
+test-coverage:
+	NODE_ENV=test KONGO_COVERAGE=1 $(MOCHA_PATH) --require blanket --reporter html-cov --harmony > coverage.html
+
+test-coveralls:
+	NODE_ENV=test KONGO_COVERAGE=1 $(MOCHA_PATH) --require blanket --reporter mocha-lcov-reporter --harmony | ./node_modules/coveralls/bin/coveralls.js
+
+.PHONY: test test-once test-debug test-coverage test-coveralls
