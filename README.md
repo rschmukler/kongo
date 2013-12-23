@@ -9,6 +9,10 @@ works well with [co](https://github.com/visionmedia/co).
 
 ## HEADS UP - THIS IS A WIP
 
+Master is under active development. If you would like to experiment with a
+semi-documented version please check out tag
+[0.0.2](https://github.com/rschmukler/kongo/tree/0.0.2).
+
 This is very much a work in progress. Feel free to use parts of it right now.
 Eventually the goal is to get a db wrapper, a collection wrapper, and perhaps a
 few more.
@@ -18,11 +22,9 @@ few more.
 Creating a wrapped collection (won't be necessary eventually).
 
 ```js
-var kongo = require('kongo');
+var Kongo = require('kongo');
 
-var Users = db.collection('Users');
-
-kongo.collectionWrapper(Users);
+var Users = new Kongo.Collection(db.collection('Users'));
 ```
 
 Some Examples (Full documentation to come)
