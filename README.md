@@ -24,7 +24,9 @@ Creating a wrapped collection (won't be necessary eventually).
 ```js
 var Kongo = require('kongo');
 
-var Users = new Kongo.Collection(db.collection('Users'));
+var db = yield Kongo.Client('mongodb://localhost:27017/kongo');
+
+var Users = db.collection('Users');
 ```
 
 Some Examples (Full documentation to come)

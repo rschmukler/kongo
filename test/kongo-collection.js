@@ -11,13 +11,17 @@ describe('Kongo Collection', function() {
     mongo.MongoClient.connect('mongodb://localhost:27017/kongo', function(err, aDb) {
       db = aDb;
       if(err) throw(err);
-      collection = new Kongo.collection(db.collection('People'));
+      collection = new Kongo.Collection(db.collection('People'));
       db.collection('People').drop(function() {
         db.createCollection('People', function(err) {
           done();
         });
       });
     });
+  });
+
+  after(function(done) {
+    db.collection('People').drop(done);
   });
 
   describe('Management', function() {
