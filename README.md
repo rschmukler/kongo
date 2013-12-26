@@ -7,19 +7,15 @@ Implementation of [mongodb](https://github.com/mongodb/node-mongodb-native) that
 works well with [co](https://github.com/visionmedia/co).
 
 
-## HEADS UP - THIS IS A WIP
-
 Master is under active development. If you would like to experiment with a
 semi-documented version please check out tag
 [0.0.2](https://github.com/rschmukler/kongo/tree/0.0.2).
 
 This is very much a work in progress. Feel free to use parts of it right now.
-Eventually the goal is to get a db wrapper, a collection wrapper, and perhaps a
-few more.
 
-## Example Usage (Subject to change)
+## Example Usage
 
-Creating a wrapped collection (won't be necessary eventually).
+Connecting to a database
 
 ```js
 var Kongo = require('kongo');
@@ -29,7 +25,7 @@ var db = yield Kongo.Client('mongodb://localhost:27017/kongo');
 var Users = db.collection('Users');
 ```
 
-Some Examples (Full documentation to come)
+Some Collection Examples (Full documentation to come)
 
 ```js
 users = yield Users.find({}, {sort: ['createdAt', -1], limit: 10});
