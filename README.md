@@ -7,11 +7,8 @@ Implementation of [mongodb](https://github.com/mongodb/node-mongodb-native) that
 works well with [co](https://github.com/visionmedia/co).
 
 
-Master is under active development. If you would like to experiment with a
-semi-documented version please check out tag
-[0.0.2](https://github.com/rschmukler/kongo/tree/0.0.2).
-
-This is very much a work in progress. Feel free to use parts of it right now.
+This is very much a work in progress. Versioning may break compatability until
+`0.1.0` is released.
 
 ## Example Usage
 
