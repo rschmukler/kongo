@@ -17,7 +17,7 @@ Connecting to a database
 ```js
 var Kongo = require('kongo');
 
-var db = yield Kongo.Client('mongodb://localhost:27017/kongo');
+var db = yield Kongo.Client.connect('mongodb://localhost:27017/kongo');
 
 var Users = db.collection('Users');
 ```
