@@ -1,4 +1,10 @@
 
+0.0.4 / 2014-05-12 
+==================
+
+ * add exposing mongo.ObjectID
+ * Removed thunkify [closes #2]
+
 0.0.3 / 2013-12-27 
 ==================
 
