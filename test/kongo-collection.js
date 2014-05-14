@@ -193,7 +193,62 @@ describe('Kongo Collection', function() {
   });
 
   describe('Indexes', function() {
-    //TODO
+    describe('createIndex', function() {
+      it('creates the index', function(done) {
+        co(function*() {
+          yield collection.createIndex('username');
+          db.collection('People').indexInformation(function(err, indexes) {
+            expect(indexes['username_1']).to.be.ok();
+            done();
+          });
+        })();
+      });
+    });
+
+    describe('ensureIndex', function() {
+      it('ensures the index', function(done) {
+        co(function*() {
+          yield collection.ensureIndex('anotherField');
+          db.collection('People').indexInformation(function(err, indexes) {
+            expect(indexes['anotherField_1']).to.be.ok();
+            done();
+          });
+        })();
+      });
+    });
+
+    describe('dropIndex', function() {
+      it('removes the index', function(done) {
+        co(function*() {
+          yield collection.createIndex('toBeRemoved');
+          yield collection.dropIndex('toBeRemoved_1');
+          db.collection('People').indexInformation(function(err, indexes) {
+            expect(indexes['toBeRemoved_1']).to.not.be.ok();
+            done();
+          });
+        })();
+      });
+    });
+
+    describe('dropIndexes', function() {
+      it('removes all indexes', function(done) {
+        co(function*() {
+          yield collection.dropIndexes();
+          db.collection('People').indexInformation(function(err, indexes) {
+            expect(Object.keys(indexes)).to.have.length(1);
+            done();
+          });
+        })();
+      });
+    });
+
+    describe('indexInformation', function() {
+      it('returns the indexInfo', co(function*() {
+        var info = yield collection.indexInformation();
+        expect(info).to.be.ok();
+        expect(info).to.have.property('_id_');
+      }));
+    });
   });
 
   describe('Aggregations', function() {
