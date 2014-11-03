@@ -7,9 +7,6 @@ Implementation of [mongodb](https://github.com/mongodb/node-mongodb-native) that
 works well with [co](https://github.com/visionmedia/co).
 
 
-This is very much a work in progress. Versioning may break compatability until
-`0.1.0` is released.
-
 ## Example Usage
 
 Connecting to a database
