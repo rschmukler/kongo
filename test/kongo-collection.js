@@ -36,16 +36,6 @@ describe('Kongo Collection', function() {
         })();
       });
     });
-
-    describe('rename', function() {
-      it('renames the collection', function(done) {
-        co(function *() {
-          yield collection.rename('NewName');
-          expect(collection._collection.collectionName).to.be('NewName');
-          yield collection.rename('People');
-        })(done);
-      });
-    });
   });
 
   describe('modification', function() {
