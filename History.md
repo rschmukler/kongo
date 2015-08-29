@@ -1,4 +1,9 @@
 
+0.0.7 / 2015-08-28
+==================
+
+  * fixed cursor methods not being passed options which will make impossible for mongo driver to apply projections
+
 0.0.6 / 2015-03-11
 ==================
 
